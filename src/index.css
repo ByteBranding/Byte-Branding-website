@@ -2,17 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Simple animation utilities used in App */
-@keyframes fadein {
+/* Theme variables (Tailwind can use these via classes) */
+/* Animations used in App.jsx */
+@keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.animate-fadein { animation: fadein 0.8s ease both; }
-
-@keyframes slideup {
+@keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.animate-slideup { animation: slideup 0.7s ease both; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn { animation: fadeIn .8s ease both; }
+.animate-slideUp { animation: slideUp .7s ease both; }
+.animate-scaleIn { animation: scaleIn .8s ease both; }
+.delay-200 { animation-delay: .18s; }
+.delay-300 { animation-delay: .3s; }
+
+/* small tweaks for mobile */
+@media (max-width: 640px) {
+  h1 { font-size: 1.8rem; }
+}
